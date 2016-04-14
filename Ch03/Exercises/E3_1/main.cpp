@@ -17,7 +17,8 @@
 using namespace std;
 
 /*
- * 1英寸(in)=0.0833333英尺(ft)  
+ * 1英寸(in)=0.0833333英尺(ft) 
+ * 1英尺(ft)=12英寸(in)
  * 
  * factor = 0.083
  * 
@@ -37,10 +38,14 @@ int main(int argc, char** argv) {
 }
 
 void convert(){
-    
+    const int ft_per_in = 12;
+    int hight;
+    int hight_ft;
+    int hight_in;
     cout << "Please enter your hight in integer inches:__\b\b";
-    int code;
-    cin >> code;
-    cout << "Your code is " << code << endl;
+    cin >> hight; //输入身高
+    hight_ft = hight / ft_per_in; //求英尺
+    hight_in = hight % ft_per_in; //求英寸
     
+    cout << "Your hight is " << hight_ft << " ft " <<  hight_in << " inches" << endl;
 }
